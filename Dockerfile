@@ -7,7 +7,7 @@ RUN gradle build --no-daemon
 
 # install Spring Boot artifact
 VOLUME /tmp
-EXPOSE 8082
+EXPOSE 8080
 
 FROM centos
 FROM openjdk
