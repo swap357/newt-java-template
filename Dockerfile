@@ -16,7 +16,7 @@ EXPOSE 8082
 
 #FROM centos
 #FROM openjdk
-COPY /home/app/project/build/libs/project-0.0.1-SNAPSHOT.jar project-0.0.1.jar
+COPY --from=build /home/app/project/build/libs/project-0.0.1-SNAPSHOT.jar project-0.0.1.jar
 #ADD build/libs/project-0.0.1-SNAPSHOT.jar project-0.0.1.jar
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","project-0.0.1.jar"]
 CMD ["java", "-jar", "project-0.0.1.jar"]
