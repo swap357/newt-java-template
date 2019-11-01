@@ -11,6 +11,6 @@ EXPOSE 8080
 
 FROM centos
 FROM openjdk
-COPY --from=build /home/gradle/src/build/libs/HelloWorld-0.0.1-SNAPSHOT.jar HelloWorld-0.0.1.jar
+COPY --from=build /home/gradle/src/build/libs/*.jar HelloWorld-0.0.1.jar
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","HelloWorld-0.0.1.jar"]
 CMD ["java", "-jar", "HelloWorld-0.0.1.jar"]
